@@ -1,0 +1,208 @@
+/* =========================
+   SECTION
+========================= */
+.education-section {
+  padding: 120px 40px;
+}
+
+/* TITLE */
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 80px;
+  background: linear-gradient(90deg, #a855f7, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================
+   TIMELINE
+========================= */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* CENTER LINE (TRUE CENTER) */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(#a855f7, #22d3ee);
+  transform: translateX(-50%);
+}
+
+/* =========================
+   ITEM
+========================= */
+.timeline-item {
+  position: relative;
+  width: 100%;
+  margin-bottom: 90px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* RIGHT SIDE */
+.timeline-item.right {
+  justify-content: flex-end;
+}
+
+/* =========================
+   NODE (PERFECTLY CENTERED)
+========================= */
+.timeline-node {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+/* LINE ABOVE NODE */
+.line-above {
+  width: 2px;
+  height: 55px;
+  background: #ffffff;
+}
+
+/* IMAGE NODE */
+.edu-img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #0f172a;
+  object-fit: cover;
+  border: 2px solid #a855f7;
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.9);
+}
+
+/* =========================
+   CARD
+========================= */
+.timeline-content {
+  width: 42%;
+  padding: 22px 26px;
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* LEFT CARD */
+.timeline-item:not(.right) .timeline-content {
+  margin-right: auto;
+  transform-origin: right center;
+}
+
+/* RIGHT CARD */
+.timeline-item.right .timeline-content {
+  margin-left: auto;
+  transform-origin: left center;
+}
+
+/* HOVER */
+.timeline-content:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 55px rgba(0, 0, 0, 0.25);
+}
+
+/* TEXT */
+.timeline-content h3 {
+  font-size: 18px;
+  color: #e9d5ff;
+}
+
+.date {
+  display: block;
+  font-size: 13px;
+  color: #fbbf24;
+  margin-bottom: 6px;
+}
+
+.school {
+  font-size: 15px;
+  color: #93c5fd;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #d1d5db;
+}
+
+/* =========================
+   MOBILE (STACKED)
+========================= */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-node {
+    left: 20px;
+    transform: none;
+  }
+
+  .timeline-item,
+  .timeline-item.right {
+    justify-content: flex-start;
+    padding-left: 60px;
+  }
+
+  .timeline-content {
+    width: 100%;
+  }
+}
+
+
+/* =========================
+   CARD HEADER WITH LOGO
+========================= */
+.edu-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+/* LOGO INSIDE CARD */
+.edu-card-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: #ffffff;
+  padding: 6px;
+  flex-shrink: 0;
+}
+
+/* TEXT BLOCK */
+.edu-card-title h3 {
+  font-size: 16px;
+  color: #e5e7eb;
+  margin-bottom: 2px;
+}
+
+.degree {
+  display: block;
+  font-size: 14px;
+  color: #c084fc;
+}
+
+.date {
+  display: block;
+  font-size: 12px;
+  color: #fbbf24;
+}

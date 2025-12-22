@@ -1,0 +1,57 @@
+<section class="experience-section">
+
+  <h2 class="section-title">Experience</h2>
+
+  <div class="experience-list">
+
+    <div
+      class="experience-card"
+      *ngFor="let exp of experiences; let i = index"
+      [style.animationDelay]="i * 0.15 + 's'"
+    >
+      <!-- HEADER -->
+      <div class="experience-header">
+        <img
+          class="company-logo"
+          [src]="exp.logo"
+          alt="{{ exp.company }}"
+        />
+
+        <div class="header-text">
+          <h3 class="role">{{ exp.role }}</h3>
+          <span class="company">{{ exp.company }}</span>
+          <span class="date">{{ exp.date }}</span>
+        </div>
+      </div>
+
+      <!-- DESCRIPTION -->
+      <p class="description">{{ exp.desc }}</p>
+
+      <!-- KEY ACHIEVEMENTS -->
+      <div class="achievements">
+        <h4>Key Achievements</h4>
+        <ul>
+          <li *ngFor="let ach of exp.achievements">
+            <a
+              [href]="ach.link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ ach.title }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="skills">
+        <span class="skill" *ngFor="let skill of exp.skills">
+          {{ skill }}
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

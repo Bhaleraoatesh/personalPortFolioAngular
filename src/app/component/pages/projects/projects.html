@@ -1,0 +1,77 @@
+<div class="card-container">
+
+  <!-- FILTER BUTTONS -->
+  <div class="filter-bar">
+    <button
+      (click)="setCategory('all')"
+      [class.active]="selectedCategory === 'all'"
+    >
+      ALL
+    </button>
+
+    <button
+      (click)="setCategory('web-api')"
+      [class.active]="selectedCategory === 'web-api'"
+    >
+      WEB API
+    </button>
+
+    <button
+      (click)="setCategory('web-app')"
+      [class.active]="selectedCategory === 'web-app'"
+    >
+      WEB APP
+    </button>
+
+    <button
+      (click)="setCategory('machine-learning')"
+      [class.active]="selectedCategory === 'machine-learning'"
+    >
+      ML
+    </button>
+  </div>
+
+  <!-- CARDS GRID -->
+  <div class="cards-grid">
+    <div class="flip-card" *ngFor="let project of filteredProjects">
+      <div class="flip-card-inner">
+
+        <!-- FRONT -->
+        <div class="flip-card-front">
+          <h2>{{ project.title }}</h2>
+          <p class="date">{{ project.date }}</p>
+          <span class="category">{{ project.category }}</span>
+        </div>
+
+        <!-- BACK -->
+        <div class="flip-card-back">
+
+          <p class="description">
+            {{ project.description || 'Coming soon...' }}
+          </p>
+
+          <!-- TAGS -->
+          <div class="tags">
+            <span *ngFor="let tag of project.tags">
+              {{ tag }}
+            </span>
+          </div>
+
+          <!-- GITHUB LINK -->
+          <a
+            *ngIf="project.github"
+            class="github-btn"
+            [href]="project.github"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View on GitHub
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

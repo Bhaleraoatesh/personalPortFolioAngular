@@ -1,0 +1,51 @@
+<section class="education-section">
+
+  <h2 class="section-title">Education</h2>
+
+  <div class="timeline">
+
+    <div
+      class="timeline-item"
+      *ngFor="let edu of education; let i = index"
+      [class.right]="i % 2 !== 0"
+    >
+
+      <!-- NODE (perfectly centered) -->
+      <div class="timeline-node">
+        <span class="line-above"></span>
+        <img
+          class="edu-img"
+          [src]="edu.img"
+          alt="Education"
+        />
+      </div>
+
+      <!-- CARD -->
+      <!-- CARD -->
+        <div class="timeline-content">
+
+        <!-- HEADER WITH LOGO -->
+        <div class="edu-card-header">
+            <img
+            class="edu-card-logo"
+            [src]="edu.img"
+            alt="Education Logo"
+            />
+
+            <div class="edu-card-title">
+            <h3>{{ edu.school }}</h3>
+            <span class="degree">{{ edu.degree }}</span>
+            <span class="date">{{ edu.date }}</span>
+            </div>
+        </div>
+
+        <p class="description">{{ edu.desc }}</p>
+
+        </div>
+
+
+    </div>
+
+  </div>
+
+</section>

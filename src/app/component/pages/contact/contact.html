@@ -1,0 +1,62 @@
+<section class="container">
+  <div class="wrapper">
+    <h2 class="title">Contact</h2>
+    <p class="desc">
+      Feel free to reach out to me for any questions or opportunities!
+    </p>
+
+    <form
+      class="contact-form"
+      #contactForm="ngForm"
+      (ngSubmit)="sendEmail(contactForm)"
+    >
+      <h3 class="contact-title">Email Me 🚀</h3>
+
+      <input
+        type="email"
+        name="from_email"
+        placeholder="Your Email"
+        required
+        ngModel
+      />
+
+      <input
+        type="text"
+        name="from_name"
+        placeholder="Your Name"
+        required
+        ngModel
+      />
+
+      <input
+        type="text"
+        name="subject"
+        placeholder="Subject"
+        required
+        ngModel
+      />
+
+      <textarea
+        name="message"
+        placeholder="Message"
+        rows="4"
+        required
+        ngModel
+      ></textarea>
+
+      <!-- reCAPTCHA -->
+      <div id="recaptcha-container"></div>
+
+      <button
+        type="submit"
+        [disabled]="sending || !captchaToken"
+      >
+        {{ sending ? 'Sending...' : 'Send' }}
+      </button>
+
+      <p *ngIf="success" class="success">✅ Message sent successfully</p>
+      <p *ngIf="error" class="error">❌ Failed to send message</p>
+
+    </form>
+  </div>
+</section>

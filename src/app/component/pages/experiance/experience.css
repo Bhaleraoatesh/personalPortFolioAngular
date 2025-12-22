@@ -1,0 +1,148 @@
+/* =========================
+   SECTION
+========================= */
+.experience-section {
+  padding: 120px 40px;
+}
+
+/* TITLE */
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 70px;
+  background: linear-gradient(90deg, #a855f7, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* LIST */
+.experience-list {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* CARD */
+.experience-card {
+  padding: 26px 28px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
+
+  animation: fadeUp 0.7s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.experience-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 55px rgba(0, 0, 0, 0.25);
+}
+
+/* HEADER */
+.experience-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.company-logo {
+  width: 52px;
+  height: 52px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 6px;
+}
+
+.role {
+  font-size: 18px;
+  font-weight: 600;
+  color: #e9d5ff;
+}
+
+.company {
+  display: block;
+  font-size: 14px;
+  color: #93c5fd;
+}
+
+.date {
+  font-size: 13px;
+  color: #fbbf24;
+}
+
+/* DESCRIPTION */
+.description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #d1d5db;
+  margin-bottom: 18px;
+}
+
+/* ACHIEVEMENTS */
+.achievements h4 {
+  font-size: 15px;
+  color: #c084fc;
+  margin-bottom: 8px;
+}
+
+.achievements ul {
+  padding-left: 18px;
+  margin-bottom: 18px;
+}
+
+.achievements li {
+  margin-bottom: 6px;
+}
+
+.achievements a {
+  color: #34d399;
+  text-decoration: none;
+}
+
+.achievements a:hover {
+  text-decoration: underline;
+}
+
+/* SKILLS */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill {
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 999px;
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.6);
+  background: rgba(52, 211, 153, 0.08);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 100px 20px;
+  }
+
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

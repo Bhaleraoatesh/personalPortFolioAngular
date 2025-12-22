@@ -1,0 +1,44 @@
+<section id="About" class="about-container">
+  <!-- BACKGROUND -->
+  <div class="about-bg"></div>
+
+  <!-- CONTENT -->
+  <div class="about-inner">
+    <!-- LEFT -->
+    <div class="about-left">
+      <h1 class="title">
+        Hi, I am <br />
+        {{ name }}
+      </h1>
+
+      <div class="text-loop">
+        <span>I am a</span>
+        <span class="highlight">
+          <span class="typewriter">{{ currentText }}</span>
+          <span class="cursor">|</span>
+        </span>
+      </div>
+
+      <p class="subtitle">
+        {{ description }}
+      </p>
+
+      <a
+        class="resume-btn"
+        [href]="resumeLink"
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        Check Resume
+      </a>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="about-right">
+      <div class="image-wrapper">
+        <!-- ✅ IMPORTANT: Angular assets path -->
+        <img src="HeroImage.jpg" alt="Profile Image" />
+      </div>
+    </div>
+  </div>
+</section>
