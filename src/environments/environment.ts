@@ -1,7 +1,7 @@
 export const environment = {
-  production: false,
-  emailJsServiceId: '',
-  emailJsTemplateId: '',
-  emailJsPublicKey: '',
-  recaptchaKey:""
+  production: true,
+  emailJsServiceId: 'emailJsServiceId',
+  emailJsTemplateId: 'emailJsTemplateId',
+  emailJsPublicKey: 'emailJsPublicKey',
+  recaptchaKey:"recaptchaKey"
 };
