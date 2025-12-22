@@ -1,33 +1,28 @@
 <nav class="navbar">
-  <div class="container">
+  <div class="nav-container">
 
     <!-- LOGO -->
     <a routerLink="/" class="logo">
-      {{fname}}.code
+      {{ fname }}.code
     </a>
 
-    <!-- DESKTOP MENU -->
+    <!-- HAMBURGER (MOBILE) -->
+    <input type="checkbox" id="nav-toggle" />
+    <label for="nav-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- NAV LINKS -->
     <ul class="nav-links">
-      <li><a routerLink="/" routerLinkActive="active">Home</a></li>
-      <li><a routerLink="/Experience" routerLinkActive="active">Experience</a></li>
-      <li><a routerLink="/Skills" routerLinkActive="active">Skills</a></li>
-      <li><a routerLink="/Education" routerLinkActive="active">Education</a></li>
-      <li><a routerLink="/projects" routerLinkActive="active">Projects</a></li>
-      <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+      <li><a routerLink="/" routerLinkActive="active" (click)="closeMenu()">Home</a></li>
+      <li><a routerLink="/Experience" routerLinkActive="active" (click)="closeMenu()">Experience</a></li>
+      <li><a routerLink="/Skills" routerLinkActive="active" (click)="closeMenu()">Skills</a></li>
+      <li><a routerLink="/Education" routerLinkActive="active" (click)="closeMenu()">Education</a></li>
+      <li><a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">Projects</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a></li>
     </ul>
 
-    <!-- MOBILE MENU ICON -->
-    <div class="menu-icon" (click)="toggleMenu()">
-      ☰
-    </div>
-
   </div>
-
-  <!-- MOBILE MENU -->
-  <ul class="mobile-menu" *ngIf="isMenuOpen">
-    <li><a routerLink="/" (click)="closeMenu()">Home</a></li>
-    <li><a routerLink="/about" (click)="closeMenu()">About</a></li>
-    <li><a routerLink="/projects" (click)="closeMenu()">Projects</a></li>
-    <li><a routerLink="/contact" (click)="closeMenu()">Contact</a></li>
-  </ul>
 </nav>

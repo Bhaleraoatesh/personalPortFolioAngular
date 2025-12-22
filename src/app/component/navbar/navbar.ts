@@ -12,12 +12,14 @@ import { Bio } from '../../data/constants';
 export class Navbar {
   bio = Bio;
   fname = this.bio.fname;
-  isMenuOpen = false;
+  isMenuOpen = true;
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
   closeMenu() {
-    this.isMenuOpen = false;
-  }
+  const toggle = document.getElementById('nav-toggle') as HTMLInputElement;
+  if (toggle) toggle.checked = false;
+}
+
 }
