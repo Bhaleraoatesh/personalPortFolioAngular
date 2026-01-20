@@ -9,9 +9,11 @@
   height: 70px;
   background: rgba(11, 6, 23, 0.95);
   backdrop-filter: blur(12px);
-  z-index: 2000; /* VERY IMPORTANT */
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 2000;
   display: flex;
   align-items: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 /* =========================
@@ -36,6 +38,11 @@
   color: #7c3aed;
   text-decoration: none;
   z-index: 2100;
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 /* =========================
@@ -45,6 +52,8 @@
   list-style: none;
   display: flex;
   gap: 2rem;
+  margin: 0;
+  padding: 0;
 }
 
 /* LINKS */
@@ -54,6 +63,7 @@
   font-size: 0.95rem;
   position: relative;
   transition: color 0.25s ease;
+  padding: 0.5rem 0;
 }
 
 .nav-links a:hover,
@@ -93,7 +103,9 @@
   flex-direction: column;
   gap: 6px;
   cursor: pointer;
-  z-index: 2200; /* ABOVE EVERYTHING */
+  z-index: 2200;
+  padding: 0.5rem;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .hamburger span {
@@ -105,9 +117,33 @@
 }
 
 /* =========================
+   TABLET STYLES
+========================= */
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: 1.5rem;
+  }
+  
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+}
+
+/* =========================
    MOBILE STYLES
 ========================= */
 @media (max-width: 768px) {
+  .navbar {
+    height: 60px;
+  }
+
+  .nav-container {
+    padding: 0 1rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
 
   /* SHOW TOGGLE */
   .hamburger {
@@ -117,21 +153,30 @@
   /* HIDE DESKTOP MENU */
   .nav-links {
     position: fixed;
-    top: 70px; /* navbar height */
+    top: 60px;
     right: -100%;
     width: 100%;
-    height: calc(100vh - 70px - 140px); /* footer space */
-    padding-bottom: 140px;
-    background: #0b0617;
-
+    height: calc(100vh - 60px);
+    background: linear-gradient(180deg, #0b0617 0%, #1a0b2e 100%);
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 2rem;
-
     overflow-y: auto;
-    transition: right 0.35s ease;
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 2100;
+    padding: 2rem 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
   }
 
   /* SLIDE IN MENU */
@@ -150,5 +195,85 @@
 
   #nav-toggle:checked + .hamburger span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .navbar {
+    height: 56px;
+  }
+
+  .nav-links {
+    top: 56px;
+    height: calc(100vh - 56px);
+    gap: 1.5rem;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .hamburger span {
+    width: 24px;
+  }
+}
+/* =========================
+   NAVBAR ROOT
+========================= */
+.navbar {
+  height: 60px; /* reduced from 70px */
+}
+
+/* =========================
+   TABLET STYLES
+========================= */
+@media (max-width: 1024px) {
+  .nav-links a {
+    font-size: 0.85rem; /* smaller font */
+  }
+}
+
+/* =========================
+   MOBILE STYLES
+========================= */
+@media (max-width: 768px) {
+  .navbar {
+    height: 50px; /* reduced from 60px */
+  }
+
+  .logo {
+    font-size: 1rem; /* smaller logo */
+  }
+
+  .nav-links {
+    top: 50px;
+    height: calc(100vh - 50px);
+  }
+
+  .nav-links a {
+    font-size: 1rem; /* slightly smaller menu items */
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .navbar {
+    height: 48px; /* reduced from 56px */
+  }
+
+  .nav-links {
+    top: 48px;
+    height: calc(100vh - 48px);
+    gap: 1.2rem; /* smaller spacing */
+  }
+
+  .logo {
+    font-size: 0.95rem;
+  }
+
+  .hamburger span {
+    width: 22px; /* slightly smaller bars */
   }
 }

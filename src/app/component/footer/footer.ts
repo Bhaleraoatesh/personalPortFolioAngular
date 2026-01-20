@@ -28,7 +28,8 @@ export class Footer {
     twitter: Bio.twitter,
     linkedin: Bio.linkedin,
     insta: Bio.insta,
-    github: Bio.github
+    github: Bio.github,
+    
   };
 
 }
