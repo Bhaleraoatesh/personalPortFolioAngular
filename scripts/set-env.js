@@ -1,20 +1,21 @@
 const fs = require('fs');
 const path = require('path');
 
-// Path to the environment file
 const targetPath = path.join(__dirname, '../src/environments/environment.ts');
 
-// Read environment variables from process.env (set by Netlify)
-const envConfig = `export const environment = {
+const envConfigFile = `export const environment = {
   production: true,
-  emailJsServiceId: '${process.env.emailJsServiceId || ''}',
-  emailJsTemplateId: '${process.env.emailJsTemplateId || ''}',
-  emailJsPublicKey: '${process.env.emailJsPublicKey || ''}',
-  recaptchaKey: '${process.env.recaptchaKey || ''}'
+  emailJsServiceId: '${process.env.EMAILJS_SERVICE_ID || ''}',
+  emailJsTemplateId: '${process.env.EMAILJS_TEMPLATE_ID || ''}',
+  emailJsPublicKey: '${process.env.EMAILJS_PUBLIC_KEY || ''}',
+  recaptchaKey: '${process.env.RECAPTCHA_KEY || ''}'
 };
 `;
 
-// Write the environment file
-fs.writeFileSync(targetPath, envConfig);
+fs.writeFileSync(targetPath, envConfigFile);
+console.log('Environment variables written to', targetPath);
+```
 
-console.log(`Environment variables written to ${targetPath}`);
+3. **Check your build logs** - After the next deployment, look for the line:
+```
+Environment variables written to /github/workspace/src/environments/environment.ts
