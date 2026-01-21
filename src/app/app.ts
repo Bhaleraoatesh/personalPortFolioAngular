@@ -11,7 +11,7 @@ import { Background } from './component/background/background';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Navbar, Footer,Background],
+  imports: [RouterOutlet, Navbar, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
