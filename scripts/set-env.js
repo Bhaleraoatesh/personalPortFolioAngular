@@ -14,7 +14,3 @@ const envConfigFile = `export const environment = {
 
 fs.writeFileSync(targetPath, envConfigFile);
 console.log('Environment variables written to', targetPath);
-```
-
-3. **Check your build logs** - After the next deployment, look for the line:
-```
