@@ -30,16 +30,6 @@ jobs:
                const coredemo = require('@actions/core')
                return await coredemo.getIDToken()
            result-encoding: string
-      - name: Check build output
-        run: |
-          echo "Checking dist folder structure:"
-          ls -la dist/ || echo "dist folder not found"
-          echo "---"
-          echo "Checking dist/personalPortFolioAngular:"
-          ls -la dist/personalPortFolioAngular/ || echo "dist/personalPortFolioAngular not found"
-          echo "---"
-          echo "Searching for index.html:"
-          find dist/ -name "index.html" -type f || echo "No index.html found"
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
@@ -69,5 +59,3 @@ jobs:
         uses: Azure/static-web-apps-deploy@v1
         with:
           action: "close"
-
-
