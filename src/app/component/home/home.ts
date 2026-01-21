@@ -6,7 +6,7 @@ import { Bio } from '../../data/constants';
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './home.html', 
+  templateUrl: './home.html',
   styleUrls: ['./home.css']
 })
 export class Home implements OnInit, OnDestroy {

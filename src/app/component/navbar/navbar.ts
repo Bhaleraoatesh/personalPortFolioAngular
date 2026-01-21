@@ -1,21 +1,25 @@
-import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { Bio } from '../../data/constants';
 
 @Component({
   selector: 'app-navbar',
-  standalone: true,
-  imports: [CommonModule, RouterModule], // ✅ REQUIRED
+  imports:[RouterModule,CommonModule],
   templateUrl: './navbar.html',
+  styleUrls: ['./navbar.css']
 })
 export class Navbar {
-  @Input() fname: string = Bio.fname;
-  mobileMenuOpen = false;
-
-  menuItems = ['home', 'experience', 'skills', 'projects','education', 'contact'];
-
+  bio = Bio;
+  fname = this.bio.fname;
+  isMenuOpen = true;
   toggleMenu() {
-    this.mobileMenuOpen = !this.mobileMenuOpen;
+    this.isMenuOpen = !this.isMenuOpen;
   }
+
+  closeMenu() {
+  const toggle = document.getElementById('nav-toggle') as HTMLInputElement;
+  if (toggle) toggle.checked = false;
+}
+
 }

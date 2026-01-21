@@ -1,15 +1,51 @@
-<section id="education" class="min-h-screen bg-slate-900 py-20">
-<div class="max-w-7xl mx-auto px-4">
-<h2 class="text-4xl font-bold text-white text-center mb-12">Education</h2>
+<section class="education-section">
+
+  <h2 class="section-title">Education</h2>
+
+  <div class="timeline">
+
+    <div
+      class="timeline-item"
+      *ngFor="let edu of education; let i = index"
+      [class.right]="i % 2 !== 0"
+    >
+
+      <!-- NODE (perfectly centered) -->
+      <div class="timeline-node">
+        <span class="line-above"></span>
+        <img
+          class="edu-img"
+          [src]="edu.img"
+          alt="Education"
+        />
+      </div>
+
+      <!-- CARD -->
+      <!-- CARD -->
+        <div class="timeline-content">
+
+        <!-- HEADER WITH LOGO -->
+        <div class="edu-card-header">
+            <img
+            class="edu-card-logo"
+            [src]="edu.img"
+            alt="Education Logo"
+            />
+
+            <div class="edu-card-title">
+            <h3>{{ edu.school }}</h3>
+            <span class="degree">{{ edu.degree }}</span>
+            <span class="date">{{ edu.date }}</span>
+            </div>
+        </div>
+
+        <p class="description">{{ edu.desc }}</p>
+
+        </div>
 
 
-<div class="space-y-8">
-<div *ngFor="let edu of education" class="bg-slate-800 rounded-xl p-6 border border-slate-700">
-<h3 class="text-2xl font-bold text-white">{{ edu.degree }}</h3>
-<p class="text-blue-400">{{ edu.school}}</p>
-<p class="text-gray-400 text-sm">{{ edu.degree }}</p>
-<p class="text-gray-300 mt-3">{{ edu.desc }}</p>
-</div>
-</div>
-</div>
+    </div>
+
+  </div>
+
 </section>
