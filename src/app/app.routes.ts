@@ -8,9 +8,9 @@ import { Experience } from './component/pages/experiance/experience';
 export const routes: Routes = [
    { path: '', component: Home },
   { path: 'projects', component: Projects },
-  {path:'Education',component: Education},
+  {path:'education',component: Education},
   { path: 'contact', component: Contact },
-  {path:'Skills',component:Skills},
-  {path:'Experience',component:Experience},
+  {path:'skills',component:Skills},
+  {path:'experience',component:Experience},
   { path: '**', redirectTo: '' }
 ];
