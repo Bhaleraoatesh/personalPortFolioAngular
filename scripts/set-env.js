@@ -18,4 +18,3 @@ console.log('Environment variables written to', targetPath);
 
 3. **Check your build logs** - After the next deployment, look for the line:
 ```
-Environment variables written to /github/workspace/src/environments/environment.ts
