@@ -3,7 +3,7 @@ name: Deploy Angular to GitHub Pages
 on:
   push:
     branches:
-      - master   # ⚠️ change to master if your repo uses master
+      - master
 
 permissions:
   contents: write
@@ -35,5 +35,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist/<ANGULAR_PROJECT_NAME>
+          publish_dir: dist/personalPortFolioAngular
           cname: www.codewithat.dev
